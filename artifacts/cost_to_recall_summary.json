@@ -1,0 +1,80 @@
+{
+  "qwen2.5-coder:32b": {
+    "runs": 14,
+    "per_run_hit_rate": 1.0,
+    "final_recall": 1.0,
+    "runs_to_first_hit": 1,
+    "runs_to_90pct_expected": 1,
+    "total_completion_tokens": 5880,
+    "total_cost_usd": 0.0,
+    "total_wall_seconds": 0.96,
+    "recall_curve": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "qwen2.5-coder:7b": {
+    "runs": 14,
+    "per_run_hit_rate": 0.857,
+    "final_recall": 1.0,
+    "runs_to_first_hit": 1,
+    "runs_to_90pct_expected": 2,
+    "total_completion_tokens": 5320,
+    "total_cost_usd": 0.0,
+    "total_wall_seconds": 0.99,
+    "recall_curve": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "qwen2.5-coder:1.5b": {
+    "runs": 14,
+    "per_run_hit_rate": 0.214,
+    "final_recall": 1.0,
+    "runs_to_first_hit": 5,
+    "runs_to_90pct_expected": 10,
+    "total_completion_tokens": 4200,
+    "total_cost_usd": 0.0,
+    "total_wall_seconds": 0.93,
+    "recall_curve": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  }
+}

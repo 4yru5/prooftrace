@@ -1,0 +1,9 @@
+{
+  "number": 42,
+  "title": "Add invoice lookup endpoint",
+  "author": "a-teammate",
+  "branch": "feat/invoice-lookup",
+  "base": "main",
+  "files": ["target_app/app/main.py"],
+  "description": "Adds GET /api/invoices/{invoice_id} so clients can fetch a single invoice by id. Authenticated; uses a parameterized query."
+}

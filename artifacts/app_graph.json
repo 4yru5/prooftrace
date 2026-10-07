@@ -1,0 +1,183 @@
+{
+  "nodes": [
+    {
+      "id": "route:healthz",
+      "kind": "route",
+      "label": "GET /healthz",
+      "file": "/Users/surya/Ayrus/target_app/app/main.py",
+      "line": 83,
+      "meta": {
+        "func": "healthz",
+        "owner_filtered_sink": false
+      }
+    },
+    {
+      "id": "route:get_invoice",
+      "kind": "route",
+      "label": "GET /api/invoices/{invoice_id}",
+      "file": "/Users/surya/Ayrus/target_app/app/main.py",
+      "line": 88,
+      "meta": {
+        "func": "get_invoice",
+        "owner_filtered_sink": false
+      }
+    },
+    {
+      "id": "auth:get_invoice",
+      "kind": "sanitizer",
+      "label": "authenticate (identity)",
+      "file": "/Users/surya/Ayrus/target_app/app/main.py",
+      "line": 88,
+      "meta": {
+        "kind": "authentication"
+      }
+    },
+    {
+      "id": "source:get_invoice:invoice_id",
+      "kind": "source",
+      "label": "path param `invoice_id`",
+      "file": "/Users/surya/Ayrus/target_app/app/main.py",
+      "line": 88,
+      "meta": {
+        "attacker_controlled": true,
+        "param": "invoice_id"
+      }
+    },
+    {
+      "id": "sink:get_invoice:91",
+      "kind": "sink",
+      "label": "db.execute (read)",
+      "file": "/Users/surya/Ayrus/target_app/app/main.py",
+      "line": 91,
+      "meta": {
+        "sql": "SELECT * FROM invoices WHERE id = :id",
+        "op": "read",
+        "owner_filtered": false
+      }
+    },
+    {
+      "id": "route:get_invoice_secure",
+      "kind": "route",
+      "label": "GET /api/invoices/{invoice_id}/secure",
+      "file": "/Users/surya/Ayrus/target_app/app/main.py",
+      "line": 103,
+      "meta": {
+        "func": "get_invoice_secure",
+        "owner_filtered_sink": true
+      }
+    },
+    {
+      "id": "auth:get_invoice_secure",
+      "kind": "sanitizer",
+      "label": "authenticate (identity)",
+      "file": "/Users/surya/Ayrus/target_app/app/main.py",
+      "line": 103,
+      "meta": {
+        "kind": "authentication"
+      }
+    },
+    {
+      "id": "source:get_invoice_secure:invoice_id",
+      "kind": "source",
+      "label": "path param `invoice_id`",
+      "file": "/Users/surya/Ayrus/target_app/app/main.py",
+      "line": 103,
+      "meta": {
+        "attacker_controlled": true,
+        "param": "invoice_id"
+      }
+    },
+    {
+      "id": "sink:get_invoice_secure:108",
+      "kind": "sink",
+      "label": "db.execute (read)",
+      "file": "/Users/surya/Ayrus/target_app/app/main.py",
+      "line": 108,
+      "meta": {
+        "sql": "SELECT * FROM invoices WHERE id = :id AND owner_id = :owne",
+        "op": "read",
+        "owner_filtered": true
+      }
+    },
+    {
+      "id": "route:list_my_invoices",
+      "kind": "route",
+      "label": "GET /api/me/invoices",
+      "file": "/Users/surya/Ayrus/target_app/app/main.py",
+      "line": 118,
+      "meta": {
+        "func": "list_my_invoices",
+        "owner_filtered_sink": true
+      }
+    },
+    {
+      "id": "auth:list_my_invoices",
+      "kind": "sanitizer",
+      "label": "authenticate (identity)",
+      "file": "/Users/surya/Ayrus/target_app/app/main.py",
+      "line": 118,
+      "meta": {
+        "kind": "authentication"
+      }
+    },
+    {
+      "id": "sink:list_my_invoices:121",
+      "kind": "sink",
+      "label": "db.execute (read)",
+      "file": "/Users/surya/Ayrus/target_app/app/main.py",
+      "line": 121,
+      "meta": {
+        "sql": "SELECT * FROM invoices WHERE owner_id = :owne",
+        "op": "read",
+        "owner_filtered": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "src": "auth:get_invoice",
+      "dst": "route:get_invoice",
+      "kind": "guards"
+    },
+    {
+      "src": "route:get_invoice",
+      "dst": "source:get_invoice:invoice_id",
+      "kind": "calls"
+    },
+    {
+      "src": "source:get_invoice:invoice_id",
+      "dst": "sink:get_invoice:91",
+      "kind": "flows_to"
+    },
+    {
+      "src": "auth:get_invoice_secure",
+      "dst": "route:get_invoice_secure",
+      "kind": "guards"
+    },
+    {
+      "src": "route:get_invoice_secure",
+      "dst": "source:get_invoice_secure:invoice_id",
+      "kind": "calls"
+    },
+    {
+      "src": "source:get_invoice_secure:invoice_id",
+      "dst": "sink:get_invoice_secure:108",
+      "kind": "flows_to"
+    },
+    {
+      "src": "auth:get_invoice_secure",
+      "dst": "sink:get_invoice_secure:108",
+      "kind": "guards"
+    },
+    {
+      "src": "auth:list_my_invoices",
+      "dst": "route:list_my_invoices",
+      "kind": "guards"
+    },
+    {
+      "src": "auth:list_my_invoices",
+      "dst": "sink:list_my_invoices:121",
+      "kind": "guards"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+digraph ProofTrace {
+  rankdir=LR;
+  bgcolor="transparent";
+  label="ProofTrace — proven source→sink path (red)"; labelloc=t; fontcolor="#e5e7eb"; fontname="Helvetica"; fontsize=12;
+  node [style="filled,rounded", fontname="Helvetica", fontcolor="#f9fafb", color="#4b5563", fontsize=11];
+  edge [color="#6b7280", fontname="Helvetica", fontcolor="#9ca3af", fontsize=9];
+  "route:healthz" [label="GET /healthz", shape=box, fillcolor="#1f2937"];
+  "route:get_invoice" [label="GET /api/invoices/{invoice_id}", shape=box, fillcolor="#1f2937", color="#ef4444", penwidth=2.4];
+  "auth:get_invoice" [label="authenticate (identity)", shape=octagon, fillcolor="#14532d"];
+  "source:get_invoice:invoice_id" [label="path param `invoice_id`", shape=cds, fillcolor="#b45309", color="#ef4444", penwidth=2.4];
+  "sink:get_invoice:91" [label="db.execute (read)", shape=cylinder, fillcolor="#7c2d12", color="#ef4444", penwidth=2.4];
+  "route:get_invoice_secure" [label="GET /api/invoices/{invoice_id}/secure", shape=box, fillcolor="#1f2937"];
+  "auth:get_invoice_secure" [label="authenticate (identity)", shape=octagon, fillcolor="#14532d"];
+  "source:get_invoice_secure:invoice_id" [label="path param `invoice_id`", shape=cds, fillcolor="#b45309"];
+  "sink:get_invoice_secure:108" [label="db.execute (read)\n(owner-filtered ✓)", shape=cylinder, fillcolor="#7c2d12"];
+  "route:list_my_invoices" [label="GET /api/me/invoices", shape=box, fillcolor="#1f2937"];
+  "auth:list_my_invoices" [label="authenticate (identity)", shape=octagon, fillcolor="#14532d"];
+  "sink:list_my_invoices:121" [label="db.execute (read)\n(owner-filtered ✓)", shape=cylinder, fillcolor="#7c2d12"];
+  "auth:get_invoice" -> "route:get_invoice" [color="#22c55e", label="guards", style=dashed];
+  "route:get_invoice" -> "source:get_invoice:invoice_id" [color="#ef4444", penwidth=2.4];
+  "source:get_invoice:invoice_id" -> "sink:get_invoice:91" [label="flows to", color="#ef4444", penwidth=2.4];
+  "auth:get_invoice_secure" -> "route:get_invoice_secure" [color="#22c55e", label="guards", style=dashed];
+  "route:get_invoice_secure" -> "source:get_invoice_secure:invoice_id";
+  "source:get_invoice_secure:invoice_id" -> "sink:get_invoice_secure:108" [label="flows to"];
+  "auth:get_invoice_secure" -> "sink:get_invoice_secure:108" [color="#22c55e", label="guards", style=dashed];
+  "auth:list_my_invoices" -> "route:list_my_invoices" [color="#22c55e", label="guards", style=dashed];
+  "auth:list_my_invoices" -> "sink:list_my_invoices:121" [color="#22c55e", label="guards", style=dashed];
+}

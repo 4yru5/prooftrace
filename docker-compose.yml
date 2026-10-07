@@ -1,0 +1,12 @@
+services:
+  target:
+    build: ./target_app
+    image: prooftrace-target:latest
+    container_name: prooftrace-target
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx,sys; sys.exit(0 if httpx.get('http://localhost:8000/healthz').status_code==200 else 1)"]
+      interval: 3s
+      timeout: 2s
+      retries: 10

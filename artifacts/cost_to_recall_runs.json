@@ -1,0 +1,428 @@
+{
+  "qwen2.5-coder:32b": [
+    {
+      "model": "qwen2.5-coder:32b",
+      "run_index": 0,
+      "hit": true,
+      "prompt_tokens": 1800,
+      "completion_tokens": 420,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.07800412178039551,
+      "ts": 1791367792.552129
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "run_index": 1,
+      "hit": true,
+      "prompt_tokens": 1800,
+      "completion_tokens": 420,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06757879257202148,
+      "ts": 1791367792.6197371
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "run_index": 2,
+      "hit": true,
+      "prompt_tokens": 1800,
+      "completion_tokens": 420,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.07113504409790039,
+      "ts": 1791367792.6908941
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "run_index": 3,
+      "hit": true,
+      "prompt_tokens": 1800,
+      "completion_tokens": 420,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06689095497131348,
+      "ts": 1791367792.7578082
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "run_index": 4,
+      "hit": true,
+      "prompt_tokens": 1800,
+      "completion_tokens": 420,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06647706031799316,
+      "ts": 1791367792.824304
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "run_index": 5,
+      "hit": true,
+      "prompt_tokens": 1800,
+      "completion_tokens": 420,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06617093086242676,
+      "ts": 1791367792.890495
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "run_index": 6,
+      "hit": true,
+      "prompt_tokens": 1800,
+      "completion_tokens": 420,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06580901145935059,
+      "ts": 1791367792.956325
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "run_index": 7,
+      "hit": true,
+      "prompt_tokens": 1800,
+      "completion_tokens": 420,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06348490715026855,
+      "ts": 1791367793.019828
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "run_index": 8,
+      "hit": true,
+      "prompt_tokens": 1800,
+      "completion_tokens": 420,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06849098205566406,
+      "ts": 1791367793.0883431
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "run_index": 9,
+      "hit": true,
+      "prompt_tokens": 1800,
+      "completion_tokens": 420,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06702113151550293,
+      "ts": 1791367793.1553931
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "run_index": 10,
+      "hit": true,
+      "prompt_tokens": 1800,
+      "completion_tokens": 420,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.07256913185119629,
+      "ts": 1791367793.227985
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "run_index": 11,
+      "hit": true,
+      "prompt_tokens": 1800,
+      "completion_tokens": 420,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06971979141235352,
+      "ts": 1791367793.2977269
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "run_index": 12,
+      "hit": true,
+      "prompt_tokens": 1800,
+      "completion_tokens": 420,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06867384910583496,
+      "ts": 1791367793.366422
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "run_index": 13,
+      "hit": true,
+      "prompt_tokens": 1800,
+      "completion_tokens": 420,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06769108772277832,
+      "ts": 1791367793.4341388
+    }
+  ],
+  "qwen2.5-coder:7b": [
+    {
+      "model": "qwen2.5-coder:7b",
+      "run_index": 0,
+      "hit": true,
+      "prompt_tokens": 1700,
+      "completion_tokens": 380,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.14023709297180176,
+      "ts": 1791367793.574469
+    },
+    {
+      "model": "qwen2.5-coder:7b",
+      "run_index": 1,
+      "hit": true,
+      "prompt_tokens": 1700,
+      "completion_tokens": 380,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.0651712417602539,
+      "ts": 1791367793.639667
+    },
+    {
+      "model": "qwen2.5-coder:7b",
+      "run_index": 2,
+      "hit": false,
+      "prompt_tokens": 1700,
+      "completion_tokens": 380,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06662392616271973,
+      "ts": 1791367793.706319
+    },
+    {
+      "model": "qwen2.5-coder:7b",
+      "run_index": 3,
+      "hit": true,
+      "prompt_tokens": 1700,
+      "completion_tokens": 380,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06477093696594238,
+      "ts": 1791367793.771111
+    },
+    {
+      "model": "qwen2.5-coder:7b",
+      "run_index": 4,
+      "hit": true,
+      "prompt_tokens": 1700,
+      "completion_tokens": 380,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06622171401977539,
+      "ts": 1791367793.837353
+    },
+    {
+      "model": "qwen2.5-coder:7b",
+      "run_index": 5,
+      "hit": true,
+      "prompt_tokens": 1700,
+      "completion_tokens": 380,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.0659646987915039,
+      "ts": 1791367793.903338
+    },
+    {
+      "model": "qwen2.5-coder:7b",
+      "run_index": 6,
+      "hit": true,
+      "prompt_tokens": 1700,
+      "completion_tokens": 380,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.07109403610229492,
+      "ts": 1791367793.9744499
+    },
+    {
+      "model": "qwen2.5-coder:7b",
+      "run_index": 7,
+      "hit": true,
+      "prompt_tokens": 1700,
+      "completion_tokens": 380,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06872391700744629,
+      "ts": 1791367794.043204
+    },
+    {
+      "model": "qwen2.5-coder:7b",
+      "run_index": 8,
+      "hit": true,
+      "prompt_tokens": 1700,
+      "completion_tokens": 380,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06665706634521484,
+      "ts": 1791367794.1098838
+    },
+    {
+      "model": "qwen2.5-coder:7b",
+      "run_index": 9,
+      "hit": true,
+      "prompt_tokens": 1700,
+      "completion_tokens": 380,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06333208084106445,
+      "ts": 1791367794.1732411
+    },
+    {
+      "model": "qwen2.5-coder:7b",
+      "run_index": 10,
+      "hit": true,
+      "prompt_tokens": 1700,
+      "completion_tokens": 380,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06317281723022461,
+      "ts": 1791367794.236437
+    },
+    {
+      "model": "qwen2.5-coder:7b",
+      "run_index": 11,
+      "hit": true,
+      "prompt_tokens": 1700,
+      "completion_tokens": 380,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06514906883239746,
+      "ts": 1791367794.3016078
+    },
+    {
+      "model": "qwen2.5-coder:7b",
+      "run_index": 12,
+      "hit": true,
+      "prompt_tokens": 1700,
+      "completion_tokens": 380,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06394338607788086,
+      "ts": 1791367794.365576
+    },
+    {
+      "model": "qwen2.5-coder:7b",
+      "run_index": 13,
+      "hit": false,
+      "prompt_tokens": 1700,
+      "completion_tokens": 380,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06132793426513672,
+      "ts": 1791367794.426931
+    }
+  ],
+  "qwen2.5-coder:1.5b": [
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "run_index": 0,
+      "hit": false,
+      "prompt_tokens": 1650,
+      "completion_tokens": 300,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06685113906860352,
+      "ts": 1791367794.493869
+    },
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "run_index": 1,
+      "hit": false,
+      "prompt_tokens": 1650,
+      "completion_tokens": 300,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06744599342346191,
+      "ts": 1791367794.5613382
+    },
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "run_index": 2,
+      "hit": false,
+      "prompt_tokens": 1650,
+      "completion_tokens": 300,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06515693664550781,
+      "ts": 1791367794.626522
+    },
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "run_index": 3,
+      "hit": false,
+      "prompt_tokens": 1650,
+      "completion_tokens": 300,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06601595878601074,
+      "ts": 1791367794.692558
+    },
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "run_index": 4,
+      "hit": true,
+      "prompt_tokens": 1650,
+      "completion_tokens": 300,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.0687570571899414,
+      "ts": 1791367794.761337
+    },
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "run_index": 5,
+      "hit": false,
+      "prompt_tokens": 1650,
+      "completion_tokens": 300,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06877994537353516,
+      "ts": 1791367794.830143
+    },
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "run_index": 6,
+      "hit": false,
+      "prompt_tokens": 1650,
+      "completion_tokens": 300,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06426215171813965,
+      "ts": 1791367794.894428
+    },
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "run_index": 7,
+      "hit": true,
+      "prompt_tokens": 1650,
+      "completion_tokens": 300,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06624507904052734,
+      "ts": 1791367794.960701
+    },
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "run_index": 8,
+      "hit": false,
+      "prompt_tokens": 1650,
+      "completion_tokens": 300,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06490302085876465,
+      "ts": 1791367795.0256279
+    },
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "run_index": 9,
+      "hit": false,
+      "prompt_tokens": 1650,
+      "completion_tokens": 300,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06835412979125977,
+      "ts": 1791367795.094013
+    },
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "run_index": 10,
+      "hit": false,
+      "prompt_tokens": 1650,
+      "completion_tokens": 300,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.07233381271362305,
+      "ts": 1791367795.16638
+    },
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "run_index": 11,
+      "hit": false,
+      "prompt_tokens": 1650,
+      "completion_tokens": 300,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06459593772888184,
+      "ts": 1791367795.2310028
+    },
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "run_index": 12,
+      "hit": true,
+      "prompt_tokens": 1650,
+      "completion_tokens": 300,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.06586408615112305,
+      "ts": 1791367795.296893
+    },
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "run_index": 13,
+      "hit": false,
+      "prompt_tokens": 1650,
+      "completion_tokens": 300,
+      "cost_usd": 0.0,
+      "wall_seconds": 0.062081098556518555,
+      "ts": 1791367795.358997
+    }
+  ]
+}

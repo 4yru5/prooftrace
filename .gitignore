@@ -1,0 +1,16 @@
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+*.egg-info/
+
+# a copy of the host docker config (may contain contexts/certs) — never commit
+.docker-clean/
+
+# runtime db
+target_app/app/invoiceflow.db
+
+# generated artifacts are regenerable; keep the chart + graphs for the README,
+# ignore the transient json logs
+artifacts/*.db

