@@ -150,7 +150,8 @@ def cmd_demo(args) -> int:
     c.print(f"\n[bold]▶ analyzing with {llm.name} (model {DEMO_MODEL})…[/]\n")
     final = tui.run_live(pr.changed_files(), llm, model=DEMO_MODEL,
                          backend=args.backend, console=c, pace=PACE)
-    run_meta = {**final.get("metrics", {}), "backend": final.get("backend")}
+    run_meta = {**final.get("metrics", {}), "backend": final.get("backend"),
+                "investigator": llm.name}
     out = _write_artifacts(final, run_meta)
     _beat(2.5)  # peak 1: the live proof breathes
 

